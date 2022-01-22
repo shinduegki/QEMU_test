@@ -6,6 +6,13 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
 from pytictoc import TicToc
 
+import numpy as np
+import pandas as pd
+
+dataset = pd.read_csv('./Wine_Quality_Data2.csv') 
+X = dataset.iloc[:,:-1].values 
+Y  = dataset.color.map({'white':0, 'red':1})
+
 t = TicToc()
 
 t.tic() 
